@@ -1,6 +1,12 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+} from "react-router-dom";
 // pages
 import Home from "./components/Home";
 import About from "./components/About";
@@ -27,8 +33,8 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="about/*" element={<About />} />
-          <Route path="users/*" element={<Users />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/users" element={<Users />} />
           <Route path="/user/:id" element={<User />} />
         </Routes>
       </div>
