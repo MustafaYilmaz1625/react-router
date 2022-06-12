@@ -1,44 +1,27 @@
 import React from "react";
 import "./App.css";
-import {
-  BrowserRouter as Router,
-  BrowserRouter,
-  Routes,
-  Route,
-  Link,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // pages
 import Home from "./components/Home";
 import About from "./components/About";
 import Users from "./components/Users";
 import User from "./components/User";
+import Layout from "./components/Layout";
+import Error404 from "./components/Error404";
 
 function App() {
   return (
-    <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-          </ul>
-        </nav>
-
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/users" element={<Users />} />
-          <Route path="/user/:id" element={<User />} />
-        </Routes>
-      </div>
-    </Router>
+    <div>
+      <Routes>
+        <Route path="/*" element={<Layout />}>
+          <Route path="" element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="users" element={<Users />} />
+          <Route path="user/:id" element={<User />} />
+          <Route path="*" element={<Error404 />} />
+        </Route>
+      </Routes>
+    </div>
   );
 }
 
