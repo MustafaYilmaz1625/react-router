@@ -6,6 +6,7 @@ function Home() {
   return (
     <div>
       <div>This is the USERS PAGE</div>
+      <hr />
       <button
         style={{
           background: "#9CCC65",

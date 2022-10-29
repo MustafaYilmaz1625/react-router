@@ -9,6 +9,7 @@ function Layout() {
           <li>
             <NavLink
               style={({ isActive }) => ({ color: isActive ? "red" : "pink" })}
+              end
               to="/"
             >
               Home

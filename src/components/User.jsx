@@ -22,7 +22,13 @@ function User() {
       <br />
       <br />
       <br />
-      <Link to={`/user/${parseInt(id) + 1}`}>Next User({parseInt(id)})</Link>
+      {parseInt(id) < 10 ? (
+        <Link to={`/users/user/${parseInt(id) + 1}`}>
+          Next User({parseInt(id) + 1})
+        </Link>
+      ) : (
+        <Link to={`/users/user/${1}`}>Turn Back 😱</Link>
+      )}
     </div>
   );
 }
